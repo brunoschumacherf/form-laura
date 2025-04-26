@@ -1,211 +1,288 @@
 :root {
-    --blue: #1e3a8a;
-    --gold: #facc15;
-    --bg: #f0f4ff;
-    --white: #fff;
-    --text-dark: #1f2937;
-    --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  }
-  
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: var(--bg);
-  }
-  
-  .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    min-height: 100vh;
-  }
-  
-  .form-card {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: var(--shadow);
-    width: 100%;
-    max-width: 720px;
-  }
-  
-  .logo-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-  
-  .logo {
-    max-height: 60px;
-    object-fit: contain;
-  }
-  
-  .form-title {
-    font-size: 1.75rem;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .form-row {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .form-input,
-  .form-select {
-    flex: 1;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-  }
-  
-  .form-section {
-    margin-bottom: 1.5rem;
-  }
-  
-  .form-label {
-    display: block;
-    font-weight: bold;
-    color: var(--blue);
-    margin-bottom: 0.5rem;
-  }
-  
-  .checkbox-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-  
-  .checkbox-label,
-  .radio-label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-  }
-  
-  .radio-group {
-    display: flex;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-  
-  .form-button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: var(--gold);
-    color: var(--blue);
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .form-button:hover {
-    background-color: #eab308; /* tom de dourado mais escuro */
-  }
-  
-  .dashboard-container {
-    padding: 2rem;
-    background-color: #f9f9f9;
-  }
-  
-  .dashboard-title {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #1a237e;
-  }
-  
-  .patient-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .patient-card {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid goldenrod;
-  }
-  
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .card-header h3 {
-    margin: 0;
-    color: #0d47a1;
-  }
-  
-  .delete-button {
-    background-color: #c62828;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .delete-button:hover {
-    background-color: #b71c1c;
-  }
-  
-  .card-body p {
-    margin: 8px 0;
-  }
-  /* ===== Thank You Page ===== */
+  --blue: #1e3a8a;
+  --gold: #facc15;
+  --bg: #f0f4ff;
+  --white: #fff;
+  --text-dark: #1f2937;
+  --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-dark);
+}
+
+/* ===== FORMULÁRIO ===== */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+.form-card {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 720px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  max-height: 60px;
+  object-fit: contain;
+}
+
+.form-title {
+  font-size: 1.75rem;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-input,
+.form-select {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.form-section {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.checkbox-label,
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.form-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--gold);
+  color: var(--blue);
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #eab308;
+}
+
+/* ===== DASHBOARD ===== */
+.dashboard-container {
+  padding: 2rem;
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--blue);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.loading-text,
+.empty-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 2rem;
+}
+
+.patient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.patient-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border-left: 5px solid var(--gold);
+  transition: transform 0.2s ease;
+}
+
+.patient-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: var(--blue);
+  font-size: 1.2rem;
+}
+
+.card-body p {
+  margin: 0.5rem 0;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.delete-button {
+  background-color: #c62828;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #b71c1c;
+}
+
+/* ===== PÁGINA DE AGRADECIMENTO ===== */
 .thankyou-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #e3f2fd;
-    height: 100vh;
-  }
-  
-  .thankyou-box {
-    background: white;
-    padding: 2rem 3rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
-    border-top: 6px solid goldenrod;
-  }
-  
-  .thankyou-title {
-    font-size: 2rem;
-    color: #0d47a1;
-    margin-bottom: 1rem;
-  }
-  
-  .thankyou-subtext {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    color: #555;
-  }
-  
-  .thankyou-button {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    background-color: #0d47a1;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: background 0.3s;
-  }
-  
-  .thankyou-button:hover {
-    background-color: #08306b;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3f2fd;
+  height: 100vh;
+}
+
+.thankyou-box {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  border-top: 6px solid goldenrod;
+}
+
+.thankyou-title {
+  font-size: 2rem;
+  color: #0d47a1;
+  margin-bottom: 1rem;
+}
+
+.thankyou-subtext {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.thankyou-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #0d47a1;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.thankyou-button:hover {
+  background-color: #08306b;
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+  background-color: #121212;
+  color: #f3f4f6;
+}
+
+body.dark .form-container,
+body.dark .dashboard-container,
+body.dark .thankyou-container {
+  background-color: #121212;
+}
+
+body.dark .form-card,
+body.dark .patient-card,
+body.dark .thankyou-box {
+  background-color: #1e1e1e;
+  color: #f3f4f6;
+}
+
+body.dark .form-input,
+body.dark .form-select {
+  background-color: #2a2a2a;
+  color: #f3f4f6;
+  border-color: #555;
+}
+
+body.dark .form-label,
+body.dark .dashboard-title,
+body.dark .card-header h3,
+body.dark .thankyou-title {
+  color: var(--gold);
+}
+
+body.dark .card-body p,
+body.dark .thankyou-subtext {
+  color: #d1d5db;
+}
+
+body.dark .thankyou-button {
+  background-color: var(--gold);
+  color: #121212;
+}
+
+body.dark .thankyou-button:hover {
+  background-color: #eab308;
+}

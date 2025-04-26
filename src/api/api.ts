@@ -1,17 +1,20 @@
-import { Patient } from "../types/Patient";
-
-let patients: Patient[] = [];
+import { Patient } from '../types/Patient';
+import { sendPatientEmail } from '../lib/email';
+import { savePatientToDB, getAllPatients, deletePatientById } from '../lib/firebase';
 
 export const submitPatient = async (patient: Patient) => {
-  patient.id = Date.now().toString();
-  patients.push(patient);
+
+  // await sendPatientEmail(patient);
+  await savePatientToDB(patient);
+
   return patient;
 };
 
-export const getPatients = async (): Promise<Patient[]> => {
-  return patients;
+export const getPatients = async () => {
+  const patients = await getAllPatients();
+  return getAllPatients();
 };
 
 export const deletePatient = async (id: string) => {
-  patients = patients.filter((patient) => patient.id !== id);
+  await deletePatientById(id);
 };
