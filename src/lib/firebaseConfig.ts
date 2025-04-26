@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs, query, where, deleteDoc, doc } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    apiKey: import.meta.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: "brunoprofilepage.firebaseapp.com",
     projectId: "brunoprofilepage",
     storageBucket: "brunoprofilepage.appspot.com",
