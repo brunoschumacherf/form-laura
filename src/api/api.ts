@@ -1,5 +1,5 @@
 import { Patient } from '../types/Patient';
-import { sendPatientEmail } from '../lib/email';
+// import { sendPatientEmail } from '../lib/email';
 import { savePatientToDB, getAllPatients, deletePatientById } from '../lib/firebase';
 
 export const submitPatient = async (patient: Patient) => {
