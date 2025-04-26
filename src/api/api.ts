@@ -11,7 +11,6 @@ export const submitPatient = async (patient: Patient) => {
 };
 
 export const getPatients = async () => {
-  const patients = await getAllPatients();
   return getAllPatients();
 };
 
