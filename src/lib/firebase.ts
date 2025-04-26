@@ -40,9 +40,6 @@ export const loginWithFirestore = async (email: string, password: string) => {
   const querySnapshot = await getDocs(collection(db, "users"));
   for (const docSnap of querySnapshot.docs) {
     const data = docSnap.data();
-    console.log(email);
-    console.log(data.email);
-    console.log(password == data.password);
     if (data.email === email && data.password === password) {
       console.log("Login bem-sucedido!");
       return true;
