@@ -1,5 +1,6 @@
 :root {
   --blue: #1e3a8a;
+  --blue-dark: #0a1a3a; /* Azul bem escuro para o modo dark */
   --gold: #facc15;
   --bg: #f0f4ff;
   --white: #fff;
@@ -240,28 +241,102 @@ body {
   background-color: #08306b;
 }
 
+/* ===== LOGIN ===== */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg);
+  padding: 2rem;
+}
+
+.login-card {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.login-title {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.login-input-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.login-label {
+  display: block;
+  font-weight: bold;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.login-error {
+  color: #c62828;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--gold);
+  color: var(--blue);
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #eab308;
+}
+
 /* ===== DARK MODE ===== */
 body.dark {
-  background-color: #121212;
+  background-color: var(--blue-dark);
   color: #f3f4f6;
 }
 
 body.dark .form-container,
 body.dark .dashboard-container,
 body.dark .thankyou-container {
-  background-color: #121212;
+  background-color: var(--blue-dark);
 }
 
 body.dark .form-card,
 body.dark .patient-card,
-body.dark .thankyou-box {
-  background-color: #1e1e1e;
+body.dark .thankyou-box,
+body.dark .login-card {
+  background-color: #03084d;
   color: #f3f4f6;
 }
 
 body.dark .form-input,
-body.dark .form-select {
-  background-color: #2a2a2a;
+body.dark .form-select,
+body.dark .login-input {
+  background-color: #2a2a3a;
   color: #f3f4f6;
   border-color: #555;
 }
@@ -269,6 +344,8 @@ body.dark .form-select {
 body.dark .form-label,
 body.dark .dashboard-title,
 body.dark .card-header h3,
+body.dark .login-label,
+body.dark .login-title,
 body.dark .thankyou-title {
   color: var(--gold);
 }
@@ -280,9 +357,21 @@ body.dark .thankyou-subtext {
 
 body.dark .thankyou-button {
   background-color: var(--gold);
-  color: #121212;
+  color: var(--blue-dark);
 }
 
 body.dark .thankyou-button:hover {
   background-color: #eab308;
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

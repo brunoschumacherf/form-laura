@@ -4,6 +4,8 @@ import { Moon, Sun } from "lucide-react";
 export const Navbar: React.FC = () => {
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem("theme");
+    // Se não tiver nada salvo, assume "dark" como padrão
+    if (saved === null) return true;
     return saved === "dark";
   });
 
